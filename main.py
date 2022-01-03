@@ -5,7 +5,7 @@ from events_def import events
 
 sys.path.append("./scripts")
 
-plugins = list(map(lambda n : n.split(".py")[0], filter(lambda n : n[-3:] == ".py", os.listdir("./scripts"))))
+plugins = [name.split(".py")[0] for name in os.listdir("./scripts") if name.endswith(".py")]
 plugins_loaded = []
 
 print(plugins)
